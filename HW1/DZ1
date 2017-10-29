@@ -1,0 +1,40 @@
+#!/bin/sh
+#ZADATAK1
+cat .bash_logout
+
+#ZADATAK2
+ls -alSr ~
+
+#ZADATAK3
+mkdir /tmp/"OKOSL tjedan"
+mkdir /tmp/"OKOSL tjedan"/{ponedjeljak,utorak,srijeda,cetvrtak,petak,.subota}
+# mkdir -p /tmp/"OKOSL tjedan"/{ponedjeljak,utorak,srijeda,cetvrtak,petak,.subota}
+pwd
+# ls /tmp/"OKOSL tjedan"/ -al
+touch /tmp/"OKOSL tjedan"/.subota/{predavanja,labosi,zadaca1,zadaca2,zadaca3,zadaca4,zadaca5,zadaca6,zadaca7,zadaca8}
+# ls /tmp/OKOSL/.subota/
+ls -R /tmp/"OKOSL tjedan"/ -al
+
+#ZADATAK4
+ln -s /var Varionica
+# ls -l Varionica
+# Sudo nam daje ovlasti da pročitamo neke datoteke koje su zaštičene. Ispis u M prikazuje razliku u velicini bez (796M) i sa (872M) ovlastima
+du -shL --block-size=G Varionica
+sudo du -shL --block-size=G Varionica
+rm Varionica
+
+#ZADATAK5
+df -ah --block-size=G /
+
+#ZADATAK6
+wget -r --no-parent -nH -nc --cut-dirs=1 https://marvin.kset.org/~leonard.volaric.horvat/okosl/ -P ~/okosl
+file ~/okosl/okosl/*
+# find ~/okosl/okosl | file -f -
+cp -r ~/okosl/ /tmp/ponedjeljak
+rm -r ~/okosl
+
+#ZADATAK7
+tail -f -n 0 /var/log/syslog
+
+
+
